@@ -52,11 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\EntityFramework\Contexts\MiniBlogContext.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\AdminMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Concrete\EntityFramework\Mappings\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
