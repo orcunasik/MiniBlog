@@ -56,6 +56,7 @@
     <Compile Include="Concrete\EntityFramework\Mappings\AuthorMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\CategoryMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\CommentMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\ContactMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
