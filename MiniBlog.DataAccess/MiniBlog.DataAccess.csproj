@@ -54,6 +54,7 @@
     <Compile Include="Concrete\EntityFramework\Contexts\MiniBlogContext.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\AdminMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\AuthorMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\CategoryMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
