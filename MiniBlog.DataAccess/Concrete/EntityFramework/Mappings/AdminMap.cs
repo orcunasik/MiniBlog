@@ -17,6 +17,7 @@ namespace MiniBlog.DataAccess.Concrete.EntityFramework.Mappings
             Property(a => a.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(a => a.UserName).IsRequired().HasMaxLength(10);
             Property(a => a.Password).IsRequired().HasMaxLength(25);
+            ToTable("Admins");
         }
     }
 }

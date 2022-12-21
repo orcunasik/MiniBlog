@@ -18,6 +18,7 @@ namespace MiniBlog.DataAccess.Concrete.EntityFramework.Mappings
             Property(a => a.Name).IsRequired().HasMaxLength(20);
             Property(a => a.About).IsRequired().HasMaxLength(100);
             Property(a => a.Image).IsRequired().HasMaxLength(300);
+            ToTable("Authors");
         }
     }
 }
