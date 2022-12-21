@@ -1,10 +1,6 @@
-﻿using MiniBlog.Entities.Concrete;
-using System;
-using System.Collections.Generic;
+﻿using MiniBlog.DataAccess.Concrete.EntityFramework.Mappings;
+using MiniBlog.Entities.Concrete;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiniBlog.DataAccess.Concrete.EntityFramework.Contexts
 {
@@ -14,6 +10,7 @@ namespace MiniBlog.DataAccess.Concrete.EntityFramework.Contexts
         {
 
         }
+        
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<About> Abouts { get; set; }
@@ -22,6 +19,15 @@ namespace MiniBlog.DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Contact> Contacts { get; set; }
 
-       
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new AdminMap());
+            modelBuilder.Configurations.Add(new AuthorMap());
+            modelBuilder.Configurations.Add(new AboutMap());
+            modelBuilder.Configurations.Add(new BlogMap());
+            modelBuilder.Configurations.Add(new CategoryMap());
+            modelBuilder.Configurations.Add(new CommentMap());
+            modelBuilder.Configurations.Add(new ContactMap());
+        }
     }
 }
