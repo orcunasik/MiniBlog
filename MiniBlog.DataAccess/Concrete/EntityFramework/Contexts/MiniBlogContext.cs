@@ -6,7 +6,7 @@ namespace MiniBlog.DataAccess.Concrete.EntityFramework.Contexts
 {
     public class MiniBlogContext : DbContext
     {
-        public MiniBlogContext() : base("MiniBlog")
+        public MiniBlogContext() : base("name=MiniBlogDbConnectionString")
         {
 
         }
