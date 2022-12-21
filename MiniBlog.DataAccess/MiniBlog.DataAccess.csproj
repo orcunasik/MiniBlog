@@ -59,6 +59,11 @@
     <Compile Include="Concrete\EntityFramework\Mappings\CategoryMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\CommentMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\ContactMap.cs" />
+    <Compile Include="Migrations\202212211828146_InitialCreate.cs" />
+    <Compile Include="Migrations\202212211828146_InitialCreate.designer.cs">
+      <DependentUpon>202212211828146_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +75,11 @@
       <Project>{D072E7F1-3E05-4DAA-925A-0BAA743A882B}</Project>
       <Name>MiniBlog.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202212211828146_InitialCreate.resx">
+      <DependentUpon>202212211828146_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
