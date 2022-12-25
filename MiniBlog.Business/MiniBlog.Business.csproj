@@ -43,5 +43,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MiniBlog.DataAccess\MiniBlog.DataAccess.csproj">
+      <Project>{0a80be4b-0d80-4909-aac0-6c3c96b97acc}</Project>
+      <Name>MiniBlog.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MiniBlog.Entities\MiniBlog.Entities.csproj">
+      <Project>{d072e7f1-3e05-4daa-925a-0baa743a882b}</Project>
+      <Name>MiniBlog.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
