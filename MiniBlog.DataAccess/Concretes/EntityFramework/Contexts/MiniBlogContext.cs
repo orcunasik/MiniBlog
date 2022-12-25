@@ -1,8 +1,8 @@
-﻿using MiniBlog.DataAccess.Concrete.EntityFramework.Mappings;
+﻿using MiniBlog.DataAccess.Concretes.EntityFramework.Mappings;
 using MiniBlog.Entities.Concrete;
 using System.Data.Entity;
 
-namespace MiniBlog.DataAccess.Concrete.EntityFramework.Contexts
+namespace MiniBlog.DataAccess.Concretes.EntityFramework.Contexts
 {
     public class MiniBlogContext : DbContext
     {

@@ -5,14 +5,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MiniBlog.DataAccess.Concrete.EntityFramework.Contexts.MiniBlogContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MiniBlog.DataAccess.Concretes.EntityFramework.Contexts.MiniBlogContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(MiniBlog.DataAccess.Concrete.EntityFramework.Contexts.MiniBlogContext context)
+        protected override void Seed(MiniBlog.DataAccess.Concretes.EntityFramework.Contexts.MiniBlogContext context)
         {
             //  This method will be called after migrating to the latest version.
 

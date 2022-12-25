@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniBlog.DataAccess.Concrete.EntityFramework.Mappings
+namespace MiniBlog.DataAccess.Concretes.EntityFramework.Mappings
 {
     public class AboutMap : EntityTypeConfiguration<About>
     {
