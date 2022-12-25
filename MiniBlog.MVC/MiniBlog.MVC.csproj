@@ -180,6 +180,20 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MiniBlog.Business\MiniBlog.Business.csproj">
+      <Project>{3677cb6c-7e34-4bff-a7c5-6e87c540d967}</Project>
+      <Name>MiniBlog.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MiniBlog.DataAccess\MiniBlog.DataAccess.csproj">
+      <Project>{0a80be4b-0d80-4909-aac0-6c3c96b97acc}</Project>
+      <Name>MiniBlog.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MiniBlog.Entities\MiniBlog.Entities.csproj">
+      <Project>{d072e7f1-3e05-4daa-925a-0baa743a882b}</Project>
+      <Name>MiniBlog.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
