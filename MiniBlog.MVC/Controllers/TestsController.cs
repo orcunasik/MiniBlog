@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MiniBlog.Business.Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,17 @@ namespace MiniBlog.MVC.Controllers
 {
     public class TestsController : Controller
     {
-        // GET: Tests
+        private readonly ICategoryService _service;
+
+        public TestsController(ICategoryService service)
+        {
+            _service = service;
+        }
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            var categoryList = _service.GetAll().ToList();
+            return View(categoryList);
         }
     }
 }
