@@ -1,11 +1,11 @@
-﻿using MiniBlog.Entities.Abstract;
+﻿using MiniBlog.Entities.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniBlog.Entities.Concrete
+namespace MiniBlog.Entities.Concretes
 {
     public class About : IEntity
     {
