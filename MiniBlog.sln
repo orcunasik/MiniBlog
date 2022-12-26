@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniBlog.DataAccess", "Mini
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniBlog.Business", "MiniBlog.Business\MiniBlog.Business.csproj", "{3677CB6C-7E34-4BFF-A7C5-6E87C540D967}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniBlog.MVC", "MiniBlog.MVC\MiniBlog.MVC.csproj", "{DF317C8D-A679-4CCB-9EB7-E60555D33F27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3677CB6C-7E34-4BFF-A7C5-6E87C540D967}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3677CB6C-7E34-4BFF-A7C5-6E87C540D967}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3677CB6C-7E34-4BFF-A7C5-6E87C540D967}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF317C8D-A679-4CCB-9EB7-E60555D33F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF317C8D-A679-4CCB-9EB7-E60555D33F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF317C8D-A679-4CCB-9EB7-E60555D33F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF317C8D-A679-4CCB-9EB7-E60555D33F27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
