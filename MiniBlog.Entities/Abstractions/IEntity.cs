@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniBlog.Entities.Abstract
+namespace MiniBlog.Entities.Abstractions
 {
     public interface IEntity
     {

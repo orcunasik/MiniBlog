@@ -1,5 +1,5 @@
 ﻿using MiniBlog.DataAccess.Concretes.EntityFramework.Mappings;
-using MiniBlog.Entities.Concrete;
+using MiniBlog.Entities.Concretes;
 using System.Data.Entity;
 
 namespace MiniBlog.DataAccess.Concretes.EntityFramework.Contexts

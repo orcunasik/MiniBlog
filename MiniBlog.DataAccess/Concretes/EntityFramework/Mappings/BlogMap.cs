@@ -1,4 +1,4 @@
-﻿using MiniBlog.Entities.Concrete;
+﻿using MiniBlog.Entities.Concretes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
