@@ -43,6 +43,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,8 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstractions\IRepository.cs" />
+    <Compile Include="Abstractions\IGenericRepository.cs" />
+    <Compile Include="Abstractions\IUnitOfWork.cs" />
     <Compile Include="Concretes\EntityFramework\Contexts\MiniBlogContext.cs" />
+    <Compile Include="Concretes\EntityFramework\EfGenericRepositoryBase.cs" />
     <Compile Include="Concretes\EntityFramework\Mappings\AboutMap.cs" />
     <Compile Include="Concretes\EntityFramework\Mappings\AdminMap.cs" />
     <Compile Include="Concretes\EntityFramework\Mappings\AuthorMap.cs" />
@@ -60,6 +65,7 @@
     <Compile Include="Concretes\EntityFramework\Mappings\CategoryMap.cs" />
     <Compile Include="Concretes\EntityFramework\Mappings\CommentMap.cs" />
     <Compile Include="Concretes\EntityFramework\Mappings\ContactMap.cs" />
+    <Compile Include="Concretes\UnitOfWork.cs" />
     <Compile Include="Migrations\202212211828146_InitialCreate.cs" />
     <Compile Include="Migrations\202212211828146_InitialCreate.designer.cs">
       <DependentUpon>202212211828146_InitialCreate.cs</DependentUpon>
