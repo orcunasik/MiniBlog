@@ -41,7 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractions\IAboutService.cs" />
+    <Compile Include="Abstractions\IAdminService.cs" />
+    <Compile Include="Abstractions\IAuthorService.cs" />
+    <Compile Include="Abstractions\IBlogService.cs" />
+    <Compile Include="Abstractions\ICategoryService.cs" />
+    <Compile Include="Abstractions\ICommentService.cs" />
+    <Compile Include="Abstractions\IContactService.cs" />
     <Compile Include="Abstractions\IService.cs" />
+    <Compile Include="Concretes\AboutService.cs" />
+    <Compile Include="Concretes\AdminService.cs" />
+    <Compile Include="Concretes\AuthorService.cs" />
+    <Compile Include="Concretes\BlogService.cs" />
+    <Compile Include="Concretes\CategoryService.cs" />
+    <Compile Include="Concretes\CommentService.cs" />
+    <Compile Include="Concretes\ContactService.cs" />
     <Compile Include="Concretes\Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
