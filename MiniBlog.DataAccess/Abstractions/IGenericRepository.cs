@@ -1,4 +1,4 @@
-﻿using MiniBlog.Entities.Abstract;
+﻿using MiniBlog.Entities.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace MiniBlog.DataAccess.Abstractions
 {
-    public interface IRepository<T> where T : class, IEntity, new()
+    public interface IGenericRepository<T> where T : class, IEntity, new()
     {
-        List<T> GetList(Expression<Func<T,bool>> filter = null);
-        T Get(Expression<Func<T,bool>> filter);
+        T GetById(int id);
+        IQueryable<T> Where(Expression<Func<T,bool>> expression);
+        IQueryable<T> GetAll();
         void Add(T entity);
         void Update(T entity);
         void Remove(T entity);
