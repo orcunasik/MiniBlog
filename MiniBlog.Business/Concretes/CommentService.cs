@@ -11,7 +11,7 @@ namespace MiniBlog.Business.Concretes
 {
     public class CommentService : Service<Comment>, ICommentService
     {
-        public CommentService(IGenericRepository<Comment> repository, IUnitOfWork unitOfWork = null) : base(repository, unitOfWork)
+        public CommentService(IGenericRepository<Comment> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
         {
         }
     }

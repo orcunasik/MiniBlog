@@ -12,10 +12,10 @@ namespace MiniBlog.Business.Concretes
 {
     public class Service<T> : IService<T> where T : class, IEntity, new()
     {
-        private readonly IGenericRepository<T> _repository;
+        private IGenericRepository<T> _repository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public Service(IGenericRepository<T> repository, IUnitOfWork unitOfWork = null)
+        public Service(IGenericRepository<T> repository, IUnitOfWork unitOfWork)
         {
             _repository = repository;
             _unitOfWork = unitOfWork;
@@ -23,6 +23,7 @@ namespace MiniBlog.Business.Concretes
 
         public T Add(T entity)
         {
+            _repository = _unitOfWork.GetRepository<T>();
             _repository.Add(entity);
             _unitOfWork.Commit();
             return entity;
@@ -40,12 +41,14 @@ namespace MiniBlog.Business.Concretes
 
         public void Remove(T entity)
         {
+            _repository = _unitOfWork.GetRepository<T>();
             _repository.Remove(entity);
             _unitOfWork.Commit();
         }
 
         public void Update(T entity)
         {
+            _repository = _unitOfWork.GetRepository<T>();
             _repository.Update(entity);
             _unitOfWork.Commit();
         }

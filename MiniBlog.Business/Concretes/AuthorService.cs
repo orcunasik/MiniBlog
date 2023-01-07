@@ -11,7 +11,7 @@ namespace MiniBlog.Business.Concretes
 {
     public class AuthorService : Service<Author>, IAuthorService
     {
-        public AuthorService(IGenericRepository<Author> repository, IUnitOfWork unitOfWork = null) : base(repository, unitOfWork)
+        public AuthorService(IGenericRepository<Author> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
         {
         }
     }

@@ -11,7 +11,7 @@ namespace MiniBlog.Business.Concretes
 {
     public class AboutService : Service<About>, IAboutService
     {
-        public AboutService(IGenericRepository<About> repository, IUnitOfWork unitOfWork = null) : base(repository, unitOfWork)
+        public AboutService(IGenericRepository<About> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
         {
         }
     }

@@ -11,7 +11,7 @@ namespace MiniBlog.Business.Concretes
 {
     public class BlogService : Service<Blog>, IBlogService
     {
-        public BlogService(IGenericRepository<Blog> repository, IUnitOfWork unitOfWork = null) : base(repository, unitOfWork)
+        public BlogService(IGenericRepository<Blog> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
         {
         }
     }

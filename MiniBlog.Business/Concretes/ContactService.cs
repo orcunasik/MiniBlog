@@ -11,7 +11,7 @@ namespace MiniBlog.Business.Concretes
 {
     public class ContactService : Service<Contact>, IContactService
     {
-        public ContactService(IGenericRepository<Contact> repository, IUnitOfWork unitOfWork = null) : base(repository, unitOfWork)
+        public ContactService(IGenericRepository<Contact> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
         {
         }
     }
