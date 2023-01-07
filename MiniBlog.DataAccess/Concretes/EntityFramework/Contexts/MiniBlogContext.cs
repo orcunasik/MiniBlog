@@ -10,7 +10,7 @@ namespace MiniBlog.DataAccess.Concretes.EntityFramework.Contexts
         {
 
         }
-        
+
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<About> Abouts { get; set; }
