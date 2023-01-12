@@ -1,0 +1,32 @@
+﻿@using MiniBlog.Entities.Concretes
+@model IEnumerable<Category>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Kategori Listesi</h4>
+<a href="/Categories/Save/" class="btn btn-primary">Oluştur</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Kategori Adı</th>
+            <th scope="col" colspan="2">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 1;
+            foreach (var category in Model)
+            {
+                <tr>
+                    <th scope="row">@i</th>
+                    <td>@category.Name</td>
+                    <td><a href="/Categories/Update/@category.Id" class="btn btn-warning">Güncelle</a></td>
+                    <td><a href="/Categories/Remove/@category.Id" class="btn btn-danger">Sil</a></td>
+                </tr>
+                i++;
+            }
+        }
+    </tbody>
+</table>

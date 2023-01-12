@@ -1,0 +1,11 @@
+﻿@using MiniBlog.Entities.Concretes
+@model IEnumerable<Category>
+<div class="sidebar-box">
+    <h3 class="heading">Kategoriler</h3>
+    <ul class="categories">
+        @foreach (var category in Model)
+        {
+            <li><a href="#">@category.Name <span>(12)</span></a></li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,13 @@
+﻿@model MiniBlog.Entities.Concretes.Category
+@{
+    ViewBag.Title = "Update";
+}
+
+<h4>Kategoriyi Güncelle</h4>
+<form action="/Categories/Update/" method="post">
+    <input type="hidden" id="Id" name="Id" value="@Model.Id" />
+    <input type="text" id="Name" name="Name" value="@Model.Name" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-success">Güncelle</button>
+    <a href="/Categories/Index" class="btn btn-primary">Geri Dön</a>
+</form>
