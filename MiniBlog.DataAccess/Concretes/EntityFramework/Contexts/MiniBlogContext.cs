@@ -18,6 +18,7 @@ namespace MiniBlog.DataAccess.Concretes.EntityFramework.Contexts
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<SubscribeMail> SubscribeMails { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -28,6 +29,7 @@ namespace MiniBlog.DataAccess.Concretes.EntityFramework.Contexts
             modelBuilder.Configurations.Add(new CategoryMap());
             modelBuilder.Configurations.Add(new CommentMap());
             modelBuilder.Configurations.Add(new ContactMap());
+            modelBuilder.Configurations.Add(new SubscribeMailMap());
         }
     }
 }
