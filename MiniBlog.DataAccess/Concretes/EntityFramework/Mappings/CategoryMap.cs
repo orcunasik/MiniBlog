@@ -16,6 +16,7 @@ namespace MiniBlog.DataAccess.Concretes.EntityFramework.Mappings
             HasKey(c => c.Id);
             Property(c =>c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(c =>c.Name).IsRequired().HasMaxLength(15);
+            Property(c =>c.Description).IsRequired().HasMaxLength(250);
             ToTable("Categories");
         }
     }
