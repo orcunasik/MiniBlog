@@ -53,7 +53,7 @@ namespace MiniBlog.MVC.Controllers
         }
         public PartialViewResult CategoryList()
         {
-            var categories = _categoryService.GetAll().ToList();
+            var categories = _categoryService.GetAll();
             return PartialView(categories);
         }
     }
