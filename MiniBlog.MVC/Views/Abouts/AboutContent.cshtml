@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MiniBlog.Entities.Concretes.About>
+<div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('/Templates/miniblog/images/img_4.jpg');">
+    <div class="container">
+        <div class="row same-height justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="post-entry text-center">
+                    <h1 class="">Hakkımızda</h1>
+                    <p class="lead mb-4 text-white">Sizler İçin Yüzlerce Blog Yazan Yazar Ekibimizi Yakından Tanıyın</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row">
+            @foreach (var about in Model)
+            {
+                <div class="col-md-6 order-md-2">
+                    <img src="@about.Image1" alt="Image" class="img-fluid">
+                </div>
+                <div class="col-md-5 mr-auto order-md-1">
+                    <h2>Misyonumuz</h2>
+                    <p>@about.Content1</p>
+                    <ul class="ul-check list-unstyled success">
+                        <li>Her Gün En Az 10 Yeni Blog Yazısı</li>
+                        <li>15'den Fazla Kategori</li>
+                        <li>Günlük 50000 Tekil Okunma</li>
+                    </ul>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+@Html.Action("Team", "Abouts")
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row">
+            @foreach (var aboutItem in Model)
+            {
+                <div class="col-md-6">
+                    <img src="@aboutItem.Image2" class="img-fluid">
+                </div>
+                <div class="col-md-5 ml-auto">
+                    <h2>Vizyonumuz</h2>
+                    <p class="mb-4">@aboutItem.Content2</p>
+
+                    <ul class="ul-check list-unstyled success">
+                        <li>Her Gün En Az 10 Yeni Blog Yazısı</li>
+                        <li>15'den Fazla Kategori</li>
+                        <li>Günlük 50000 Tekil Okunma</li>
+                    </ul>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
