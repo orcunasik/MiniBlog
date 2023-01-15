@@ -13,6 +13,7 @@ namespace MiniBlog.Entities.Concretes
         public string Name { get; set; }
         public string Mail { get; set; }
         public string Text { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
         public int BlogId { get; set; }
         public virtual Blog Blog { get; set; }
     }
