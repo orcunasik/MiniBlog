@@ -62,6 +62,7 @@
     <Compile Include="Abstractions\ICommentDal.cs" />
     <Compile Include="Abstractions\IContactDal.cs" />
     <Compile Include="Abstractions\IGenericRepository.cs" />
+    <Compile Include="Abstractions\ISubscribeMailDal.cs" />
     <Compile Include="Abstractions\IUnitOfWork.cs" />
     <Compile Include="Concretes\EntityFramework\Contexts\MiniBlogContext.cs" />
     <Compile Include="Concretes\EntityFramework\EfAboutDal.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Concretes\EntityFramework\EfCommentDal.cs" />
     <Compile Include="Concretes\EntityFramework\EfContactDal.cs" />
     <Compile Include="Concretes\EntityFramework\EfGenericRepositoryBase.cs" />
+    <Compile Include="Concretes\EntityFramework\EfSubscribeMailDal.cs" />
     <Compile Include="Concretes\EntityFramework\Mappings\AboutMap.cs" />
     <Compile Include="Concretes\EntityFramework\Mappings\AdminMap.cs" />
     <Compile Include="Concretes\EntityFramework\Mappings\AuthorMap.cs" />
@@ -79,10 +81,23 @@
     <Compile Include="Concretes\EntityFramework\Mappings\CategoryMap.cs" />
     <Compile Include="Concretes\EntityFramework\Mappings\CommentMap.cs" />
     <Compile Include="Concretes\EntityFramework\Mappings\ContactMap.cs" />
+    <Compile Include="Concretes\EntityFramework\Mappings\SubscribeMailMap.cs" />
     <Compile Include="Concretes\UnitOfWork.cs" />
     <Compile Include="Migrations\202212211828146_InitialCreate.cs" />
     <Compile Include="Migrations\202212211828146_InitialCreate.designer.cs">
       <DependentUpon>202212211828146_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301141654462_AddedSubscribeMailEntity.cs" />
+    <Compile Include="Migrations\202301141654462_AddedSubscribeMailEntity.designer.cs">
+      <DependentUpon>202301141654462_AddedSubscribeMailEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301151250426_AddedDateColumnForCommentEntity.cs" />
+    <Compile Include="Migrations\202301151250426_AddedDateColumnForCommentEntity.designer.cs">
+      <DependentUpon>202301151250426_AddedDateColumnForCommentEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301151955514_AddedDescriptionColumnForCategory.cs" />
+    <Compile Include="Migrations\202301151955514_AddedDescriptionColumnForCategory.designer.cs">
+      <DependentUpon>202301151955514_AddedDescriptionColumnForCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,6 +115,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202212211828146_InitialCreate.resx">
       <DependentUpon>202212211828146_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301141654462_AddedSubscribeMailEntity.resx">
+      <DependentUpon>202301141654462_AddedSubscribeMailEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301151250426_AddedDateColumnForCommentEntity.resx">
+      <DependentUpon>202301151250426_AddedDateColumnForCommentEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301151955514_AddedDescriptionColumnForCategory.resx">
+      <DependentUpon>202301151955514_AddedDescriptionColumnForCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
