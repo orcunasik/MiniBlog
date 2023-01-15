@@ -1,11 +1,9 @@
 ﻿using MiniBlog.DataAccess.Abstractions;
 using MiniBlog.DataAccess.Concretes.EntityFramework.Contexts;
 using MiniBlog.Entities.Concretes;
-using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiniBlog.DataAccess.Concretes.EntityFramework
 {
@@ -13,6 +11,16 @@ namespace MiniBlog.DataAccess.Concretes.EntityFramework
     {
         public EfCommentDal(MiniBlogContext context) : base(context)
         {
+        }
+
+        public List<Comment> GetCommentsByBlog()
+        {
+            return _context.Comments.Include(i => i.Blog).ToList();
+        }
+
+        public IQueryable<Comment> GetCommentByBlog(int id)
+        {
+            return _context.Comments.Where(i => i.BlogId == id).AsQueryable();
         }
     }
 }
