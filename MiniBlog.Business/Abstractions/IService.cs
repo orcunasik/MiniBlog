@@ -11,7 +11,7 @@ namespace MiniBlog.Business.Abstractions
     public interface IService<T> where T : class, IEntity, new()
     {
         T GetById(int id);
-        IQueryable<T> Where(Expression<Func<T, bool>> expression);
+        IEnumerable<T> Where(Expression<Func<T, bool>> expression);
         IEnumerable<T> GetAll();
         T Add(T entity);
         void Update(T entity);
