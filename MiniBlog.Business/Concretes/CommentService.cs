@@ -11,8 +11,21 @@ namespace MiniBlog.Business.Concretes
 {
     public class CommentService : Service<Comment>, ICommentService
     {
-        public CommentService(IGenericRepository<Comment> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
+        private readonly ICommentDal _commentDal;
+        public CommentService(IGenericRepository<Comment> repository, IUnitOfWork unitOfWork, ICommentDal commentDal) : base(repository, unitOfWork)
         {
+            _commentDal = commentDal;
+        }
+
+        public List<Comment> GetCommentsByBlog()
+        {
+            List<Comment> comments = _commentDal.GetCommentsByBlog();
+            return comments;
+        }
+
+        public IEnumerable<Comment> GetCommentByBlog(int id)
+        {
+            return _commentDal.GetCommentByBlog(id).ToList();
         }
     }
 }
