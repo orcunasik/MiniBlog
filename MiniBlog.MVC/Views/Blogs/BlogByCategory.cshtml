@@ -1,4 +1,6 @@
-﻿
+﻿@using MiniBlog.Business.Helpers
+@using MiniBlog.Entities.Concretes
+@model IEnumerable<Blog>
 @{
     ViewBag.Title = "BlogByCategory";
 }
@@ -7,9 +9,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <span>Category</span>
-                <h3>Sports</h3>
-                <p>Category description here.. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam error eius quo, officiis non maxime quos reiciendis perferendis doloremque maiores!</p>
+                <span>Kategori</span>
+                <h3>@ViewBag.blogCategoryName</h3>
+                <p>@ViewBag.blogCategoryDescription</p>
             </div>
         </div>
     </div>
@@ -17,186 +19,27 @@
 <div class="site-section bg-white">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 mb-4">
-                <div class="entry2">
-                    <a href="single.html"><img src="~/Templates/miniblog/images/img_1.jpg" alt="Image" class="img-fluid rounded"></a>
-                    <div class="excerpt">
-                        <span class="post-category text-white bg-secondary mb-3">Politics</span>
+            @foreach (var blogCategory in Model)
+            {
+                <div class="col-lg-4 mb-4">
+                    <div class="entry2">
+                        <a href="/Blogs/BlogDetails/@blogCategory.Id"><img src="@blogCategory.Image" style="height:250px;" alt="Image" class="img-fluid rounded"></a>
+                        <div class="excerpt">
+                            <span class="post-category text-white bg-secondary mb-3">@blogCategory.Category.Name</span>
 
-                        <h2><a href="single.html">The AI magically removes moving objects from videos.</a></h2>
-                        <div class="post-meta align-items-center text-left clearfix">
-                            <figure class="author-figure mb-0 mr-3 float-left"><img src="~/Templates/miniblog/images/person_1.jpg" alt="Image" class="img-fluid"></figure>
-                            <span class="d-inline-block mt-1">By <a href="#">Carrol Atkinson</a></span>
-                            <span>&nbsp;-&nbsp; July 19, 2019</span>
+                            <h2><a href="/Blogs/BlogDetails/@blogCategory.Id">@blogCategory.Title</a></h2>
+                            <div class="post-meta align-items-center text-left clearfix">
+                                <figure class="author-figure mb-0 mr-3 float-left"><img src="@blogCategory.Author.Image" alt="Image" class="img-fluid"></figure>
+                                <span class="d-inline-block mt-1"><a href="#">@blogCategory.Author.Name</a></span>
+                                <span>&nbsp;-&nbsp; @blogCategory.Date.ToString("MMMM dd, yyyy")</span>
+                            </div>
+
+                            <p style="height:120px;">@blogCategory.Content.CharacterDelimiter(140)</p>
+                            <p><a href="/Blogs/BlogDetails/@blogCategory.Id">Devamını Oku..</a></p>
                         </div>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-                        <p><a href="#">Read More</a></p>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="entry2">
-                    <a href="single.html"><img src="~/Templates/miniblog/images/img_2.jpg" alt="Image" class="img-fluid rounded"></a>
-                    <div class="excerpt">
-                        <span class="post-category text-white bg-success mb-3">Nature</span>
-
-                        <h2><a href="single.html">The AI magically removes moving objects from videos.</a></h2>
-                        <div class="post-meta align-items-center text-left clearfix">
-                            <figure class="author-figure mb-0 mr-3 float-left"><img src="~/Templates/miniblog/images/person_1.jpg" alt="Image" class="img-fluid"></figure>
-                            <span class="d-inline-block mt-1">By <a href="#">Carrol Atkinson</a></span>
-                            <span>&nbsp;-&nbsp; July 19, 2019</span>
-                        </div>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-                        <p><a href="#">Read More</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="entry2">
-                    <a href="single.html"><img src="~/Templates/miniblog/images/img_3.jpg" alt="Image" class="img-fluid rounded"></a>
-                    <div class="excerpt">
-                        <span class="post-category text-white bg-warning mb-3">Travel</span>
-
-                        <h2><a href="single.html">The AI magically removes moving objects from videos.</a></h2>
-                        <div class="post-meta align-items-center text-left clearfix">
-                            <figure class="author-figure mb-0 mr-3 float-left"><img src="~/Templates/miniblog/images/person_1.jpg" alt="Image" class="img-fluid"></figure>
-                            <span class="d-inline-block mt-1">By <a href="#">Carrol Atkinson</a></span>
-                            <span>&nbsp;-&nbsp; July 19, 2019</span>
-                        </div>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-                        <p><a href="#">Read More</a></p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 mb-4">
-                <div class="entry2">
-                    <a href="single.html"><img src="~/Templates/miniblog/images/img_1.jpg" alt="Image" class="img-fluid rounded"></a>
-                    <div class="excerpt">
-                        <span class="post-category text-white bg-secondary mb-3">Politics</span>
-
-                        <h2><a href="single.html">The AI magically removes moving objects from videos.</a></h2>
-                        <div class="post-meta align-items-center text-left clearfix">
-                            <figure class="author-figure mb-0 mr-3 float-left"><img src="~/Templates/miniblog/images/person_1.jpg" alt="Image" class="img-fluid"></figure>
-                            <span class="d-inline-block mt-1">By <a href="#">Carrol Atkinson</a></span>
-                            <span>&nbsp;-&nbsp; July 19, 2019</span>
-                        </div>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-                        <p><a href="#">Read More</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="entry2">
-                    <a href="single.html"><img src="~/Templates/miniblog/images/img_2.jpg" alt="Image" class="img-fluid rounded"></a>
-                    <div class="excerpt">
-                        <span class="post-category text-white bg-success mb-3">Nature</span>
-
-                        <h2><a href="single.html">The AI magically removes moving objects from videos.</a></h2>
-                        <div class="post-meta align-items-center text-left clearfix">
-                            <figure class="author-figure mb-0 mr-3 float-left"><img src="~/Templates/miniblog/images/person_1.jpg" alt="Image" class="img-fluid"></figure>
-                            <span class="d-inline-block mt-1">By <a href="#">Carrol Atkinson</a></span>
-                            <span>&nbsp;-&nbsp; July 19, 2019</span>
-                        </div>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-                        <p><a href="#">Read More</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="entry2">
-                    <a href="single.html"><img src="~/Templates/miniblog/images/img_4.jpg" alt="Image" class="img-fluid rounded"></a>
-                    <div class="excerpt">
-                        <span class="post-category text-white bg-danger mb-3">Sports</span>
-
-                        <h2><a href="single.html">The AI magically removes moving objects from videos.</a></h2>
-                        <div class="post-meta align-items-center text-left clearfix">
-                            <figure class="author-figure mb-0 mr-3 float-left"><img src="~/Templates/miniblog/images/person_1.jpg" alt="Image" class="img-fluid"></figure>
-                            <span class="d-inline-block mt-1">By <a href="#">Carrol Atkinson</a></span>
-                            <span>&nbsp;-&nbsp; July 19, 2019</span>
-                        </div>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-                        <p><a href="#">Read More</a></p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 mb-4">
-                <div class="entry2">
-                    <a href="single.html"><img src="~/Templates/miniblog/images/img_1.jpg" alt="Image" class="img-fluid rounded"></a>
-                    <div class="excerpt">
-                        <span class="post-category text-white bg-success mb-3">Nature</span>
-
-                        <h2><a href="single.html">The AI magically removes moving objects from videos.</a></h2>
-                        <div class="post-meta align-items-center text-left clearfix">
-                            <figure class="author-figure mb-0 mr-3 float-left"><img src="~/Templates/miniblog/images/person_1.jpg" alt="Image" class="img-fluid"></figure>
-                            <span class="d-inline-block mt-1">By <a href="#">Carrol Atkinson</a></span>
-                            <span>&nbsp;-&nbsp; July 19, 2019</span>
-                        </div>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-                        <p><a href="#">Read More</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="entry2">
-                    <a href="single.html"><img src="~/Templates/miniblog/images/img_2.jpg" alt="Image" class="img-fluid rounded"></a>
-                    <div class="excerpt">
-                        <span class="post-category text-white bg-danger mb-3">Sports</span>
-                        <span class="post-category text-white bg-secondary mb-3">Tech</span>
-
-                        <h2><a href="single.html">The AI magically removes moving objects from videos.</a></h2>
-                        <div class="post-meta align-items-center text-left clearfix">
-                            <figure class="author-figure mb-0 mr-3 float-left"><img src="~/Templates/miniblog/images/person_1.jpg" alt="Image" class="img-fluid"></figure>
-                            <span class="d-inline-block mt-1">By <a href="#">Carrol Atkinson</a></span>
-                            <span>&nbsp;-&nbsp; July 19, 2019</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-                        <p><a href="#">Read More</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="entry2">
-                    <a href="single.html"><img src="~/Templates/miniblog/images/img_4.jpg" alt="Image" class="img-fluid rounded"></a>
-                    <div class="excerpt">
-                        <span class="post-category text-white bg-danger mb-3">Sports</span>
-                        <span class="post-category text-white bg-warning mb-3">Lifestyle</span>
-
-                        <h2><a href="single.html">The AI magically removes moving objects from videos.</a></h2>
-                        <div class="post-meta align-items-center text-left clearfix">
-                            <figure class="author-figure mb-0 mr-3 float-left"><img src="~/Templates/miniblog/images/person_1.jpg" alt="Image" class="img-fluid"></figure>
-                            <span class="d-inline-block mt-1">By <a href="#">Carrol Atkinson</a></span>
-                            <span>&nbsp;-&nbsp; July 19, 2019</span>
-                        </div>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-                        <p><a href="#">Read More</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row text-center pt-5 border-top">
-            <div class="col-md-12">
-                <div class="custom-pagination">
-                    <span>1</span>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <span>...</span>
-                    <a href="#">15</a>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>
-@Html.Action("Footer","Abouts")

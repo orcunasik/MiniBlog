@@ -1,9 +1,14 @@
-﻿
+﻿@using PagedList;
+@using PagedList.Mvc;
+@using MiniBlog.Entities.Concretes
+@model PagedList.IPagedList<Blog>
 @{
     ViewBag.Title = "Index";
 }
 @Html.Action("FeaturedPosts", "Blogs")
-@Html.Action("BlogList", "Blogs")
+<div id="pagedList" class="site-section">
+        @Html.Partial("BlogList",Model)
+</div>
 @Html.Action("OtherFeaturedPosts", "Blogs")
-@Html.Action("MailSubscribe", "Blogs")
+@Html.Action("AddMail", "SubscribeMails")
 @Html.Action("Footer", "Abouts")

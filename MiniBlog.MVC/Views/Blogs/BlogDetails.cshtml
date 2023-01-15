@@ -1,6 +1,4 @@
-﻿@*@using MiniBlog.Entities.Concretes
-    @model IEnumerable<Blog>*@
-@{
+﻿@{
     ViewBag.Title = "BlogDetails";
 }
 @Html.Action("BlogCover", "Blogs")
@@ -9,7 +7,8 @@
         <div class="row blog-entries element-animate">
             <div class="col-md-12 col-lg-8 main-content">
                 @Html.Action("BlogReadMore", "Blogs")
-                @Html.Action("CommentList", "Comments")
+                @Html.Action("CommentListByBlog", "Comments")
+                
             </div>
             <div class="col-md-12 col-lg-4 sidebar">
                 @Html.Action("AuthorAbout", "Authors")
@@ -21,5 +20,5 @@
     </div>
 </section>
 @Html.Action("OtherFeaturedPosts", "Blogs")
-@Html.Action("MailSubscribe", "Blogs")
+@Html.Action("AddMail", "SubscribeMails")
 @Html.Action("Footer", "Abouts")
