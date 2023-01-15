@@ -49,6 +49,7 @@
     <Compile Include="Abstractions\ICommentService.cs" />
     <Compile Include="Abstractions\IContactService.cs" />
     <Compile Include="Abstractions\IService.cs" />
+    <Compile Include="Abstractions\ISubscribeMailService.cs" />
     <Compile Include="Concretes\AboutService.cs" />
     <Compile Include="Concretes\AdminService.cs" />
     <Compile Include="Concretes\AuthorService.cs" />
@@ -57,6 +58,8 @@
     <Compile Include="Concretes\CommentService.cs" />
     <Compile Include="Concretes\ContactService.cs" />
     <Compile Include="Concretes\Service.cs" />
+    <Compile Include="Concretes\SubscribeMailService.cs" />
+    <Compile Include="Helpers\SubstringForBlogHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
