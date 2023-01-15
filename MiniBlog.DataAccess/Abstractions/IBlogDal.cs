@@ -9,5 +9,8 @@ namespace MiniBlog.DataAccess.Abstractions
 {
     public interface IBlogDal : IGenericRepository<Blog>
     {
+        IQueryable<Blog> GetBlogByCategory(int id);
+        IQueryable<Blog> GetBlogById(int id);
+        IQueryable<Blog> GetBlogByAuthor(int id);
     }
 }

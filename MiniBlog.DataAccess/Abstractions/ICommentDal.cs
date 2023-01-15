@@ -9,5 +9,7 @@ namespace MiniBlog.DataAccess.Abstractions
 {
     public interface ICommentDal : IGenericRepository<Comment>
     {
+        List<Comment> GetCommentsByBlog();
+        IQueryable<Comment> GetCommentByBlog(int id);
     }
 }
