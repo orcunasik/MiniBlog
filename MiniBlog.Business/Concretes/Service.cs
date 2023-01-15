@@ -53,7 +53,7 @@ namespace MiniBlog.Business.Concretes
             _unitOfWork.Commit();
         }
 
-        public IQueryable<T> Where(Expression<Func<T, bool>> expression)
+        public IEnumerable<T> Where(Expression<Func<T, bool>> expression)
         {
             return _repository.Where(expression);
         }
