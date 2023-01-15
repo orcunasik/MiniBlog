@@ -26,8 +26,28 @@ namespace MiniBlog.MVC
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterGeneric(typeof(EfGenericRepositoryBase<>)).As(typeof(IGenericRepository<>)).InstancePerLifetimeScope();
             builder.RegisterGeneric(typeof(Service<>)).As(typeof(IService<>)).InstancePerLifetimeScope();
+
             builder.RegisterType<CategoryService>().As<ICategoryService>().InstancePerLifetimeScope();
             builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().InstancePerLifetimeScope();
+
+            builder.RegisterType<BlogService>().As<IBlogService>().InstancePerLifetimeScope();
+            builder.RegisterType<EfBlogDal>().As<IBlogDal>().InstancePerLifetimeScope();
+
+            builder.RegisterType<SubscribeMailService>().As<ISubscribeMailService>().InstancePerLifetimeScope();
+            builder.RegisterType<EfSubscribeMailDal>().As<ISubscribeMailDal>().InstancePerLifetimeScope();
+
+            builder.RegisterType<AboutService>().As<IAboutService>().InstancePerLifetimeScope();
+            builder.RegisterType<EfAboutDal>().As<IAboutDal>().InstancePerLifetimeScope();
+
+            builder.RegisterType<CommentService>().As<ICommentService>().InstancePerLifetimeScope();
+            builder.RegisterType<EfCommentDal>().As<ICommentDal>().InstancePerLifetimeScope();
+
+            builder.RegisterType<AuthorService>().As<IAuthorService>().InstancePerLifetimeScope();
+            builder.RegisterType<EfAuthorDal>().As<IAuthorDal>().InstancePerLifetimeScope();
+
+            builder.RegisterType<ContactService>().As<IContactService>().InstancePerLifetimeScope();
+            builder.RegisterType<EfContactDal>().As<IContactDal>().InstancePerLifetimeScope();
+
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
             builder.RegisterType<MiniBlogContext>();
 
