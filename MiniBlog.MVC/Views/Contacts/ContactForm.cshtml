@@ -1,47 +1,36 @@
 ﻿<div class="col-md-7 mb-5">
-
-
-
-    <form action="#" class="p-5 bg-white">
-
-
+    <form action="/Contacts/ContactForm" method="post" class="p-5 bg-white">
         <div class="row form-group">
             <div class="col-md-6 mb-3 mb-md-0">
-                <label class="text-black" for="fname">Adınız</label>
-                <input type="text" id="fname" class="form-control">
+                <label class="text-black" for="FirstName">Adınız</label>
+                <input type="text" id="FirstName" name="FirstName" value="" class="form-control">
             </div>
             <div class="col-md-6">
-                <label class="text-black" for="lname">Soyadınız</label>
-                <input type="text" id="lname" class="form-control">
+                <label class="text-black" for="LastName">Soyadınız</label>
+                <input type="text" id="LastName" name="LastName" value="" class="form-control">
             </div>
         </div>
-
         <div class="row form-group">
-
             <div class="col-md-12">
-                <label class="text-black" for="email">Eposta Adresiniz</label>
-                <input type="email" id="email" class="form-control">
+                <label class="text-black" for="Mail">Eposta Adresiniz</label>
+                <input type="email" id="Mail" name="Mail" value="" class="form-control">
             </div>
         </div>
-
         <div class="row form-group">
-
             <div class="col-md-12">
-                <label class="text-black" for="subject">Konu</label>
-                <input type="subject" id="subject" class="form-control">
+                <label class="text-black" for="Subject">Konu</label>
+                <input type="text" id="Subject" name="Subject" value="" class="form-control">
             </div>
         </div>
-
         <div class="row form-group">
             <div class="col-md-12">
-                <label class="text-black" for="message">Mesajınız</label>
-                <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Mesajınız Buraya Yazın"></textarea>
+                <label class="text-black" for="Message">Mesajınız</label>
+                <textarea name="Message" id="Message" cols="30" rows="7" class="form-control" placeholder="Mesajınız Buraya Yazın"></textarea>
             </div>
         </div>
-
         <div class="row form-group">
             <div class="col-md-12">
-                <input type="submit" value="Göndere" class="btn btn-primary py-2 px-4 text-white">
+                <input type="submit" value="Gönder" class="btn btn-primary py-2 px-4 text-white">
             </div>
         </div>
 
