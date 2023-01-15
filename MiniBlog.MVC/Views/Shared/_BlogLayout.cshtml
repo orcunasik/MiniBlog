@@ -10,7 +10,7 @@
     <title>Mini Blog</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    @RenderSection("PagedListStyle",required: false)
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700|Playfair+Display:400,700,900" rel="stylesheet">
 
     <link rel="stylesheet" href="~/Templates/miniblog/fonts/icomoon/style.css">
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="~/Templates/miniblog/css/owl.theme.default.min.css">
     @*<link rel="stylesheet" href="~/Templates/miniblog/css/bootstrap-datepicker.css">*@
     <link rel="stylesheet" href="~/Templates/miniblog/fonts/flaticon/font/flaticon.css">
-    @*<link rel="stylesheet" href="~/Templates/miniblog/css/aos.css">*@
+    <link rel="stylesheet" href="~/Templates/miniblog/css/aos.css">
     <link rel="stylesheet" href="~/Templates/miniblog/css/magnific-popup.css">
 
     <link rel="stylesheet" href="~/Templates/miniblog/css/style.css">
@@ -51,10 +51,9 @@
                         <nav class="site-navigation" role="navigation">
                             <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
                                 <li><a href="/Blogs/Index">Anasayfa</a></li>
-                                <li><a href="category.html">Teknoloji</a></li>
-                                <li><a href="category.html">Kültür</a></li>
-                                <li><a href="category.html">Seyahat</a></li>
-                                <li><a href="category.html">Film-Dizi</a></li>
+                                <li><a href="/Blogs/BlogByCategory/1">Teknoloji</a></li>
+                                <li><a href="/Blogs/BlogByCategory/2">Kültür-Sanat</a></li>
+                                <li><a href="/Blogs/BlogByCategory/3">Seyahat</a></li>
                                 <li><a href="/Abouts/Index">Hakkımızda</a></li>
                                 <li><a href="/Contacts/Index">İletişim</a></li>
                                 <li class="d-none d-lg-inline-block"><a href="#" class="js-search-toggle"><span class="icon-search"></span></a></li>
@@ -68,18 +67,22 @@
         @RenderBody()
     </div>
 
-    <script src="~/Templates/miniblog/js/jquery-3.3.1.min.js"></script>
+    @*<script src="~/Templates/miniblog/js/jquery-3.3.1.min.js"></script>*@
+    <script src="~/Scripts/jquery-3.6.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/Templates/miniblog/js/jquery-migrate-3.0.1.min.js"></script>
     <script src="~/Templates/miniblog/js/jquery-ui.js"></script>
     <script src="~/Templates/miniblog/js/popper.min.js"></script>
-    <script src="~/Templates/miniblog/js/bootstrap.min.js"></script>
+    @*<script src="~/Templates/miniblog/js/bootstrap.min.js"></script>*@
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Templates/miniblog/js/owl.carousel.min.js"></script>
     <script src="~/Templates/miniblog/js/jquery.stellar.min.js"></script>
     <script src="~/Templates/miniblog/js/jquery.countdown.min.js"></script>
     <script src="~/Templates/miniblog/js/jquery.magnific-popup.min.js"></script>
     <script src="~/Templates/miniblog/js/bootstrap-datepicker.min.js"></script>
     <script src="~/Templates/miniblog/js/aos.js"></script>
-
+    @RenderSection("scripts", required: false)
     <script src="~/Templates/miniblog/js/main.js"></script>
+
 </body>
 </html>
