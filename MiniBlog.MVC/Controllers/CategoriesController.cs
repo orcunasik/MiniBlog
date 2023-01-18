@@ -20,7 +20,8 @@ namespace MiniBlog.MVC.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var categories = _categoryService.GetAll();
+            return View(categories);
         }
         [HttpGet]
         public ActionResult Save()
