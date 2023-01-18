@@ -3,14 +3,6 @@ using MiniBlog.DataAccess.Concretes.EntityFramework;
 using MiniBlog.DataAccess.Concretes.EntityFramework.Contexts;
 using MiniBlog.Entities.Abstractions;
 using System;
-using System.Collections.Generic;
-using System.Data.Entity.Core;
-using System.Data.Entity.Core.Objects;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiniBlog.DataAccess.Concretes
 {
@@ -23,9 +15,9 @@ namespace MiniBlog.DataAccess.Concretes
             _context = context;
         }
 
-        public IGenericRepository<T> GetRepository<T>() where T : class, IEntity, new()
+        public IGenericRepositoryDal<T> GetRepository<T>() where T : class, IEntity, new()
         {
-            return new EfGenericRepositoryBase<T>(_context);
+            return new EfGenericRepositoryDal<T>(_context);
         }
 
         public void Commit()
