@@ -61,7 +61,7 @@
     <Compile Include="Abstractions\ICategoryDal.cs" />
     <Compile Include="Abstractions\ICommentDal.cs" />
     <Compile Include="Abstractions\IContactDal.cs" />
-    <Compile Include="Abstractions\IGenericRepository.cs" />
+    <Compile Include="Abstractions\IGenericRepositoryDal.cs" />
     <Compile Include="Abstractions\ISubscribeMailDal.cs" />
     <Compile Include="Abstractions\IUnitOfWork.cs" />
     <Compile Include="Concretes\EntityFramework\Contexts\MiniBlogContext.cs" />
@@ -72,7 +72,7 @@
     <Compile Include="Concretes\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concretes\EntityFramework\EfCommentDal.cs" />
     <Compile Include="Concretes\EntityFramework\EfContactDal.cs" />
-    <Compile Include="Concretes\EntityFramework\EfGenericRepositoryBase.cs" />
+    <Compile Include="Concretes\EntityFramework\EfGenericRepositoryDal.cs" />
     <Compile Include="Concretes\EntityFramework\EfSubscribeMailDal.cs" />
     <Compile Include="Concretes\EntityFramework\Mappings\AboutMap.cs" />
     <Compile Include="Concretes\EntityFramework\Mappings\AdminMap.cs" />
