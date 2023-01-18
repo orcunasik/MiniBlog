@@ -157,6 +157,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutsController.cs" />
+    <Compile Include="Controllers\AdminControllers\AdminBlogsController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
     <Compile Include="Controllers\BlogsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Modules\RepoServiceModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2522,6 +2524,9 @@
     <Content Include="Templates\AdminLTE-3.0.4\plugins\toastr\toastr.js.map" />
     <Content Include="Templates\AdminLTE-3.0.4\README.md" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\AdminBlogs\AdminBlogsList.cshtml" />
+    <Content Include="Views\AdminBlogs\Save.cshtml" />
+    <Content Include="Views\AdminBlogs\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
