@@ -12,7 +12,7 @@ namespace MiniBlog.Business.Concretes
     public class CommentService : Service<Comment>, ICommentService
     {
         private readonly ICommentDal _commentDal;
-        public CommentService(IGenericRepository<Comment> repository, IUnitOfWork unitOfWork, ICommentDal commentDal) : base(repository, unitOfWork)
+        public CommentService(IGenericRepositoryDal<Comment> repository, IUnitOfWork unitOfWork, ICommentDal commentDal) : base(repository, unitOfWork)
         {
             _commentDal = commentDal;
         }

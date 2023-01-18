@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MiniBlog.DataAccess.Abstractions
 {
-    public interface IBlogDal : IGenericRepository<Blog>
+    public interface IBlogDal : IGenericRepositoryDal<Blog>
     {
         IQueryable<Blog> GetBlogByCategory(int id);
         IQueryable<Blog> GetBlogById(int id);

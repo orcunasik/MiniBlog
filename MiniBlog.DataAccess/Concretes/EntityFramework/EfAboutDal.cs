@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MiniBlog.DataAccess.Concretes.EntityFramework
 {
-    public class EfAboutDal : EfGenericRepositoryBase<About>, IAboutDal
+    public class EfAboutDal : EfGenericRepositoryDal<About>, IAboutDal
     {
         public EfAboutDal(MiniBlogContext context) : base(context)
         {

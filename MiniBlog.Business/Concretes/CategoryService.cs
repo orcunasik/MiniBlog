@@ -11,7 +11,7 @@ namespace MiniBlog.Business.Concretes
 {
     public class CategoryService : Service<Category>, ICategoryService
     {
-        public CategoryService(IGenericRepository<Category> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
+        public CategoryService(IGenericRepositoryDal<Category> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
         {
         }
     }

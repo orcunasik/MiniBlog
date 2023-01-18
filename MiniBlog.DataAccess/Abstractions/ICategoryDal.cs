@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MiniBlog.DataAccess.Abstractions
 {
-    public interface ICategoryDal : IGenericRepository<Category>
+    public interface ICategoryDal : IGenericRepositoryDal<Category>
     {
     }
 }

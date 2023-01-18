@@ -12,7 +12,7 @@ namespace MiniBlog.Business.Concretes
     public class BlogService : Service<Blog>, IBlogService
     {
         private readonly IBlogDal _blogDal;
-        public BlogService(IGenericRepository<Blog> repository, IUnitOfWork unitOfWork, IBlogDal blogDal) : base(repository, unitOfWork)
+        public BlogService(IGenericRepositoryDal<Blog> repository, IUnitOfWork unitOfWork, IBlogDal blogDal) : base(repository, unitOfWork)
         {
             _blogDal = blogDal;
         }

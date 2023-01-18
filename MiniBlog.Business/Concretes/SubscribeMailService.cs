@@ -11,7 +11,7 @@ namespace MiniBlog.Business.Concretes
 {
     public class SubscribeMailService : Service<SubscribeMail>, ISubscribeMailService
     {
-        public SubscribeMailService(IGenericRepository<SubscribeMail> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
+        public SubscribeMailService(IGenericRepositoryDal<SubscribeMail> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
         {
         }
     }

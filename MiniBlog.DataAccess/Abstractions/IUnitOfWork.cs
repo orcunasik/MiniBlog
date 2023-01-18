@@ -9,7 +9,7 @@ namespace MiniBlog.DataAccess.Abstractions
 {
     public interface IUnitOfWork : IDisposable
     {
-        IGenericRepository<T> GetRepository<T>() where T : class, IEntity, new();
+        IGenericRepositoryDal<T> GetRepository<T>() where T : class, IEntity, new();
         void Commit();
     }
 }

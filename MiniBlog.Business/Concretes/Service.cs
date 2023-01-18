@@ -12,10 +12,10 @@ namespace MiniBlog.Business.Concretes
 {
     public class Service<T> : IService<T> where T : class, IEntity, new()
     {
-        private IGenericRepository<T> _repository;
+        private IGenericRepositoryDal<T> _repository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public Service(IGenericRepository<T> repository, IUnitOfWork unitOfWork)
+        public Service(IGenericRepositoryDal<T> repository, IUnitOfWork unitOfWork)
         {
             _repository = repository;
             _unitOfWork = unitOfWork;

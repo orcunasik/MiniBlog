@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MiniBlog.DataAccess.Concretes.EntityFramework
 {
-    public class EfBlogDal : EfGenericRepositoryBase<Blog>, IBlogDal
+    public class EfBlogDal : EfGenericRepositoryDal<Blog>, IBlogDal
     {
         public EfBlogDal(MiniBlogContext context) : base(context)
         {

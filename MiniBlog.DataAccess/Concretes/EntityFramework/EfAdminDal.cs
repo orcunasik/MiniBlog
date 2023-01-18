@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MiniBlog.DataAccess.Concretes.EntityFramework
 {
-    public class EfAdminDal : EfGenericRepositoryBase<Admin>, IAdminDal
+    public class EfAdminDal : EfGenericRepositoryDal<Admin>, IAdminDal
     {
         public EfAdminDal(MiniBlogContext context) : base(context)
         {

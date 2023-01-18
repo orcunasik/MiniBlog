@@ -11,7 +11,7 @@ namespace MiniBlog.Business.Concretes
 {
     public class AdminService : Service<Admin>, IAdminService
     {
-        public AdminService(IGenericRepository<Admin> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
+        public AdminService(IGenericRepositoryDal<Admin> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
         {
         }
     }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MiniBlog.DataAccess.Abstractions
 {
-    public interface ICommentDal : IGenericRepository<Comment>
+    public interface ICommentDal : IGenericRepositoryDal<Comment>
     {
         List<Comment> GetCommentsByBlog();
         IQueryable<Comment> GetCommentByBlog(int id);

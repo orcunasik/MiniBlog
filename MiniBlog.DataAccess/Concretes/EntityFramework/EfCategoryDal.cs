@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MiniBlog.DataAccess.Concretes.EntityFramework
 {
-    public class EfCategoryDal : EfGenericRepositoryBase<Category>, ICategoryDal
+    public class EfCategoryDal : EfGenericRepositoryDal<Category>, ICategoryDal
     {
         public EfCategoryDal(MiniBlogContext context) : base(context)
         {

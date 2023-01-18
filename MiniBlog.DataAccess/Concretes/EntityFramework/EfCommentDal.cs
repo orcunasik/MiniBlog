@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace MiniBlog.DataAccess.Concretes.EntityFramework
 {
-    public class EfCommentDal : EfGenericRepositoryBase<Comment>, ICommentDal
+    public class EfCommentDal : EfGenericRepositoryDal<Comment>, ICommentDal
     {
         public EfCommentDal(MiniBlogContext context) : base(context)
         {
