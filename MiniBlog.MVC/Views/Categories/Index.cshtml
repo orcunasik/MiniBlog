@@ -6,11 +6,12 @@
 
 <h4>Kategori Listesi</h4>
 <a href="/Categories/Save/" class="btn btn-primary">Oluştur</a>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Kategori Adı</th>
+            <th scope="col">Kategori Açıklaması</th>
             <th scope="col" colspan="2">İşlemler</th>
         </tr>
     </thead>
@@ -22,6 +23,7 @@
                 <tr>
                     <th scope="row">@i</th>
                     <td>@category.Name</td>
+                    <td>@category.Description</td>
                     <td><a href="/Categories/Update/@category.Id" class="btn btn-warning">Güncelle</a></td>
                     <td><a href="/Categories/Remove/@category.Id" class="btn btn-danger">Sil</a></td>
                 </tr>
