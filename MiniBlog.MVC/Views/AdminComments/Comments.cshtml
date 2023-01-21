@@ -1,0 +1,29 @@
+﻿@model IEnumerable<MiniBlog.Entities.Concretes.Comment>
+<div class="card-body">
+    @foreach (var comment in Model)
+    {
+        <div class="post clearfix">
+            <div class="user-block">
+                <img class="img-circle img-bordered-sm" src="~/Templates/AdminLTE-3.0.4/dist/img/avatar.png" alt="user image">
+                <span class="username">
+                    <a href="/AdminComments/BlogComments/@comment.Blog.Id">@comment.Name ==> @comment.Blog.Title</a>
+                    <span class="description float-right">Tarih: @comment.Date.ToString("MMMM dd yyyy hh:mm")</span>
+                </span>
+            </div>
+            <p>
+                @comment.Text
+            </p>
+            <p>
+                
+                <span class="float-right">
+                    <a href="#" class="link-black text-sm">
+                        <i class="far fa-thumbs-up mr-1"></i> Şugarla&nbsp;  
+                        <i class="fas fa-eraser"></i> Yorumu Kaldır
+                    </a>
+                </span>
+            </p>
+        </div>
+    }
+</div>
+
+

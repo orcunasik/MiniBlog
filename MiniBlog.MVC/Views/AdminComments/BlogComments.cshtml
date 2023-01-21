@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MiniBlog.Entities.Concretes.Comment>
+@{
+    ViewBag.Title = "BlogComments";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-sm-6 mt-3">
+    <h3>Gelen Yorumlar</h3>
+</div>
+<div class="col-md-12">
+    @foreach (var comment in Model)
+    {
+        <div class="timeline">
+            <div>
+                <i class="fas fa-comments bg-yellow"></i>
+                <div class="timeline-item">
+                    <span class="time bg-gradient"><i class="fas fa-clock"></i> @comment.Date</span>
+                    <h3 class="timeline-header" style="color:darkgoldenrod;font-size:1.3rem;">@comment.Name</h3>
+                    <div class="timeline-body" style="color:black;font-size:1.1rem;">
+                        @comment.Text
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
