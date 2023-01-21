@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-sm-6 mt-3">
+    <h2>Yazarlar</h2>
+    <a href="/AdminAuthors/Save" class="btn btn-outline-primary">Yeni Yazar Ekle</a>
+</div>
+@Html.Action("Authors","AdminAuthors")
+

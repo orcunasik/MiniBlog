@@ -1,0 +1,38 @@
+﻿@model MiniBlog.Entities.Concretes.Author
+@{
+    ViewBag.Title = "Save";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<form role="form" action="/AdminAuthors/Save" method="post" class="col-md-8">
+    <div class="card-body">
+        <div class="form-group col-sm-8">
+            <label for="Title">Rolü</label>
+            <input type="text" id="Title" name="Title" class="form-control" placeholder="Yazar Rolü">
+        </div>
+        <div class="form-group col-sm-12">
+            <label for="Name">Yazar Adı</label>
+            <input type="text" id="Name" name="Name" class="form-control" placeholder="Yazar Adı">
+        </div>
+        <div class="form-group col-sm-12">
+            <label for="Image">Profil Url</label>
+            <input type="text" id="Image" name="Image" class="form-control" placeholder="Profil URL">
+        </div>
+        <div class="form-group col-sm-12">
+            <label for="Email">Eposta Adresi</label>
+            <input type="text" id="Email" name="Email" class="form-control" placeholder="Eposta Adresi">
+        </div>
+        <div class="form-group col-sm-12">
+            <label for="Password">Parola</label>
+            <input type="text" id="Password" name="Password" class="form-control" placeholder="Parola">
+        </div>
+        <div class="form-group col-sm-12">
+            <label for="About">Yazar Hakında</label>
+            <input type="text" id="About" name="About" class="form-control" placeholder="Yazar Hakkında">
+        </div>
+    </div>
+    <div class="card-footer">
+        <button type="submit" class="btn btn-outline-success mb-2">Kaydet</button>
+        <a href="/AdminAuthors/Index" class="btn btn-outline-primary mb-2">Geri Dön</a>
+    </div>
+</form>
+
