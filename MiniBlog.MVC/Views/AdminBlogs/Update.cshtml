@@ -18,16 +18,23 @@
         <div class="col-md-8">
             <div class="form-group">
                 <label for="Content">Blog İçeriği</label>
-                <textarea id="Content" name="Content" class="form-control col" rows="5" placeholder="İçerik buraya..."></textarea>
+                <textarea id="Content" name="Content" class="form-control col" rows="5" placeholder="İçerik buraya...">@Model.Content</textarea>
             </div>
         </div>
         <div class="col-sm-8">
             <div class="form-group">
                 <label>Kategori</label>
                 <select class="form-control" id="CategoryId" name="CategoryId">
-                    @foreach (var category in ViewBag.categoryValues)
+                    @foreach (var category in ViewBag.CategoryList)
                     {
-                        <option value="@category.Value">@category.Text</option>
+                        if (category.Text == Model.Category.Name)
+                        {
+                            <option selected="selected" value="@category.Value">@category.Text</option>
+                        }
+                        else
+                        {
+                            <option value="@category.Value">@category.Text</option>
+                        }
                     }
                 </select>
             </div>
@@ -36,9 +43,16 @@
             <div class="form-group">
                 <label>Yazar</label>
                 <select class="form-control" id="AuthorId" name="AuthorId">
-                    @foreach (var author in ViewBag.authorValues)
+                    @foreach (var author in ViewBag.AuthorList)
                     {
-                        <option value="@author.Value">@author.Text</option>
+                        if (author.Text == Model.Author.Name)
+                        {
+                            <option selected="selected" value="@author.Value">@author.Text</option>
+                        }
+                        else
+                        {
+                            <option value="@author.Value">@author.Text</option>
+                        } 
                     }
                 </select>
             </div>
@@ -46,7 +60,6 @@
     </div>
     <div class="card-footer">
         <button type="submit" class="btn btn-outline-success mb-2">Güncelle</button>
-        <a href="/AdminBlogs/AdminBlogsList" class="btn btn-outline-primary mb-2">Geri Dön</a>
+        <a href="/AdminBlogs/Blogs" class="btn btn-outline-primary mb-2">Geri Dön</a>
     </div>
 </form>
-
