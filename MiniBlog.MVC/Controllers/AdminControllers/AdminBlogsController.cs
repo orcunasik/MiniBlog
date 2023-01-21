@@ -1,12 +1,8 @@
 ﻿using MiniBlog.Business.Abstractions;
-using MiniBlog.DataAccess.Concretes.EntityFramework.Contexts;
 using MiniBlog.Entities.Concretes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Security.Cryptography;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MiniBlog.MVC.Controllers.AdminControllers
@@ -28,29 +24,38 @@ namespace MiniBlog.MVC.Controllers.AdminControllers
         {
             return View();
         }
-        public ActionResult AdminBlogsList()
+        public ActionResult Blogs()
         {
             var blogList = _blogService.GetAll();
             return View(blogList);
         }
+
+        public ActionResult BlogDetail(int id)
+        {
+            var blogDetail = _blogService.GetById(id);
+            return View(blogDetail);
+        }
+
         [HttpGet]
         public ActionResult Save()
         {
-            List<SelectListItem> categoryValues = (from c in _categoryService.GetAll()
-                                                   select new SelectListItem
-                                                   {
-                                                       Text = c.Name,
-                                                       Value = c.Id.ToString()
-                                                   }).ToList();
-            ViewBag.categoryValues = categoryValues;
+            List<SelectListItem> categories = new List<SelectListItem>
+                    (from c in _categoryService.GetAll()
+                    select new SelectListItem
+                    {
+                        Text = c.Name,
+                        Value = c.Id.ToString()
+                    });
+            ViewBag.CategoryList = categories;
 
-            List<SelectListItem> authorValues = (from a in _authorService.GetAll()
-                                                   select new SelectListItem
-                                                   {
-                                                       Text = a.Name,
-                                                       Value = a.Id.ToString()
-                                                   }).ToList();
-            ViewBag.authorValues = authorValues;
+            List<SelectListItem> auhors = new List<SelectListItem>
+                    (from a in _authorService.GetAll()
+                     select new SelectListItem
+                     {
+                        Text = a.Name,
+                        Value = a.Id.ToString()
+                     });
+            ViewBag.AuthorList = auhors;
             return View();
         }
         [HttpPost]
@@ -58,43 +63,46 @@ namespace MiniBlog.MVC.Controllers.AdminControllers
         {
             blog.Date = DateTime.Now;
             _blogService.Add(blog);
-            return RedirectToAction(nameof(AdminBlogsList));
+            return RedirectToAction(nameof(Blogs));
         }
 
         [HttpGet]
         public ActionResult Update(int id)
         {
-            //var blogId = _blogService.Find(i => i.Id == id);
             var blogId = _blogService.GetById(id);
-            List<SelectListItem> categoryValues = (from c in _categoryService.GetAll()
-                                                   select new SelectListItem
-                                                   {
-                                                       Text = c.Name,
-                                                       Value = c.Id.ToString()
-                                                   }).ToList();
-            ViewBag.categoryValues = categoryValues;
+            List<SelectListItem> categories = new List<SelectListItem>(
+                    from c in _categoryService.GetAll()
+                    select new SelectListItem
+                    {
+                        Text = c.Name,
+                        Value = c.Id.ToString(),
+                        Selected = c.Id == blogId.CategoryId
+                    });
+            ViewBag.CategoryList = categories;
 
-            List<SelectListItem> authorValues = (from a in _authorService.GetAll()
-                                                 select new SelectListItem
-                                                 {
-                                                     Text = a.Name,
-                                                     Value = a.Id.ToString()
-                                                 }).ToList();
-            ViewBag.authorValues = authorValues;
+            List<SelectListItem> authors = new List<SelectListItem>(
+                    from a in _authorService.GetAll()
+                    select new SelectListItem
+                    {
+                        Text = a.Name,
+                        Value = a.Id.ToString(),
+                        Selected = a.Id == blogId.AuthorId
+                    });
+            ViewBag.AuthorList = authors;
             return View(blogId);
         }
         [HttpPost]
         public ActionResult Update(Blog blog)
         {
             _blogService.Update(blog);
-            return RedirectToAction(nameof(AdminBlogsList));
+            return RedirectToAction(nameof(Blogs));
         }
         
         public ActionResult Remove(int id)
         {
             var blogId = _blogService.GetById(id);
             _blogService.Remove(blogId);
-            return RedirectToAction(nameof(AdminBlogsList));
+            return RedirectToAction(nameof(Blogs));
         }
     }
 }
