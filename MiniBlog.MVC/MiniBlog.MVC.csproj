@@ -158,6 +158,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutsController.cs" />
     <Compile Include="Controllers\AdminControllers\AdminBlogsController.cs" />
+    <Compile Include="Controllers\AdminControllers\AdminCommentsController.cs" />
+    <Compile Include="Controllers\AdminControllers\AdminAuthorsController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
     <Compile Include="Controllers\BlogsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
@@ -2524,13 +2526,22 @@
     <Content Include="Templates\AdminLTE-3.0.4\plugins\toastr\toastr.js.map" />
     <Content Include="Templates\AdminLTE-3.0.4\README.md" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\AdminBlogs\AdminBlogsList.cshtml" />
+    <Content Include="Views\AdminBlogs\Blogs.cshtml" />
     <Content Include="Views\AdminBlogs\Save.cshtml" />
     <Content Include="Views\AdminBlogs\Update.cshtml" />
+    <Content Include="Views\AdminBlogs\BlogDetail.cshtml" />
+    <Content Include="Views\AdminComments\BlogComments.cshtml" />
+    <Content Include="Views\AdminAuthors\Index.cshtml" />
+    <Content Include="Views\AdminAuthors\Authors.cshtml" />
+    <Content Include="Views\AdminAuthors\Save.cshtml" />
+    <Content Include="Views\AdminAuthors\Update.cshtml" />
+    <Content Include="Views\AdminComments\Index.cshtml" />
+    <Content Include="Views\AdminComments\Comments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\AdminWriters\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
