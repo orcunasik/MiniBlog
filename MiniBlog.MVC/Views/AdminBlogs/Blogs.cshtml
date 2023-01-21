@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MiniBlog.Entities.Concretes.Blog>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Blogs";
+}
+<div class="col-md-12 mt-3">
+    <h4>Tüm Bloglar</h4>
+</div>
+<span class="mt-1 mb-2 ml-0"><a href="/AdminBlogs/Save/" class="btn btn-outline-primary">Blog Oluştur</a></span>
+<table class="table table-bordered">
+       <thead>
+            <tr>
+                <th>#</th>
+                <th>Başlık</th>
+                <th>Kategori</th>
+                <th>Oluşturan</th>
+                <th>Tarihi</th>
+                <th>Yorumlar</th>
+                <th>Detaylar</th>
+                <th colspan="2">İşlemler</th>
+            </tr>
+        </thead>
+       <tbody>
+            @{ int i = 1;
+                foreach (var blog in Model)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>@blog.Title</td>
+                        <td>@blog.Category.Name</td>
+                        <td>@blog.Author.Name</td>
+                        <td>@blog.Date.ToString("dd MMMM yyyy")</td>
+                        <td><a href="/AdminComments/BlogComments/@blog.Id" class="btn btn-outline-primary">Yorumlar</a></td>
+                        <td><a href="/AdminBlogs/BlogDetail/@blog.Id" class="btn btn-outline-success">Detaylar</a></td>
+                        <td><a href="/AdminBlogs/Update/@blog.Id" class="btn btn-outline-warning">Düzenle</a></td>
+                        <td><a href="/AdminBlogs/Remove/@blog.Id" class="btn btn-outline-danger">Sil</a></td>
+                    </tr>
+                    i++;
+                }
+            }
+        </tbody>
+</table>
+

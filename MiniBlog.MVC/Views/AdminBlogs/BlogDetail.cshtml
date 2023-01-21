@@ -1,0 +1,51 @@
+﻿@model MiniBlog.Entities.Concretes.Blog
+@{
+    ViewBag.Title = "BlogDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-md-12 mt-3">
+    <table class="table table-borderless">
+        <thead>
+            <tr>
+                <th class="badge-info fa fa-book"> @Model.Title</th>
+            </tr>
+            <tr>
+                <td class="badge-success fa fa-book-reader"> @Model.Category.Name</td>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div class="col-md-12">
+    <table class="table table-borderless">
+        <thead>
+            <tr>
+                <th class="badge-info fa fa-image"> Görsel</th>
+            </tr>
+            <tr>
+                <td>
+                    <img src="@Model.Image" alt="@Model.Title" />
+                </td>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div class="col-md-12">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>İçerik</th>
+                <th>Tarihi</th>
+                <th>Durum</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Content</td>
+                <td>@Model.Date.ToString("MMMM dd yyyy")</td>
+                <td>Aktif</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/AdminBlogs/Blogs" class="btn btn-outline-primary mb-2">Geri Dön</a>
+</div>
+
