@@ -99,6 +99,10 @@
     <Compile Include="Migrations\202301151955514_AddedDescriptionColumnForCategory.designer.cs">
       <DependentUpon>202301151955514_AddedDescriptionColumnForCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301211619213_AddedTitleEmailPasswordColumnsForAuthor.cs" />
+    <Compile Include="Migrations\202301211619213_AddedTitleEmailPasswordColumnsForAuthor.designer.cs">
+      <DependentUpon>202301211619213_AddedTitleEmailPasswordColumnsForAuthor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -124,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301151955514_AddedDescriptionColumnForCategory.resx">
       <DependentUpon>202301151955514_AddedDescriptionColumnForCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301211619213_AddedTitleEmailPasswordColumnsForAuthor.resx">
+      <DependentUpon>202301211619213_AddedTitleEmailPasswordColumnsForAuthor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
