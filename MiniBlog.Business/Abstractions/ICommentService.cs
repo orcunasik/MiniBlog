@@ -1,9 +1,5 @@
 ﻿using MiniBlog.Entities.Concretes;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiniBlog.Business.Abstractions
 {
@@ -11,5 +7,6 @@ namespace MiniBlog.Business.Abstractions
     {
         List<Comment> GetCommentsByBlog();
         IEnumerable<Comment> GetCommentByBlog(int id);
+        int CommentStatusToChange(int id);
     }
 }
