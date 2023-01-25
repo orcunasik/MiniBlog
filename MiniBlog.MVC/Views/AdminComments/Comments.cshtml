@@ -1,29 +1,78 @@
 ﻿@model IEnumerable<MiniBlog.Entities.Concretes.Comment>
-<div class="card-body">
-    @foreach (var comment in Model)
-    {
-        <div class="post clearfix">
-            <div class="user-block">
-                <img class="img-circle img-bordered-sm" src="~/Templates/AdminLTE-3.0.4/dist/img/avatar.png" alt="user image">
-                <span class="username">
-                    <a href="/AdminComments/BlogComments/@comment.Blog.Id">@comment.Name ==> @comment.Blog.Title</a>
-                    <span class="description float-right">Tarih: @comment.Date.ToString("MMMM dd yyyy hh:mm")</span>
-                </span>
-            </div>
-            <p>
-                @comment.Text
-            </p>
-            <p>
-                
-                <span class="float-right">
-                    <a href="#" class="link-black text-sm">
-                        <i class="far fa-thumbs-up mr-1"></i> Şugarla&nbsp;  
-                        <i class="fas fa-eraser"></i> Yorumu Kaldır
-                    </a>
-                </span>
-            </p>
+<div class="col-md-12 mt-2">
+    <div class="card">
+        <div class="card-header p-2">
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Yayımlanan Yorumlar</a></li>
+                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Kaldırılan Yorumlar</a></li>
+            </ul>
         </div>
-    }
+        <div class="card-body">
+            <div class="tab-content">
+                <div class="active tab-pane" id="activity">
+                    @foreach (var comment in Model)
+                    {
+                        if (comment.IsActive)
+                        {
+                            <div class="post clearfix">
+                                <div class="user-block">
+                                    <img class="img-circle img-bordered-sm" src="~/Templates/AdminLTE-3.0.4/dist/img/avatar.png" alt="user image">
+                                    <span class="username">
+                                        <a href="/AdminComments/BlogComments/@comment.Blog.Id">@comment.Name ==> @comment.Blog.Title</a>
+                                        <span class="description float-right">Tarih: @comment.Date.ToString("MMMM dd yyyy hh:mm")</span>
+                                    </span>
+                                </div>
+                                <p>
+                                    @comment.Text
+                                </p>
+                                <p>
+                                    <span class="float-right">
+                                        <a href="#" class="link-black text-sm">
+                                            <i class="fas fa-edit"></i> Düzenle&nbsp;
+                                        </a>
+                                        <a href="/AdminComments/CommentStatusChangeFalse/@comment.Id" class="link-black text-sm">
+                                            <i class="fas fa-trash"></i> Yorumu Sil
+                                        </a>
+                                    </span>
+                                </p>
+                            </div>
+                        }
+                    }
+                </div>
+                <div class="tab-pane" id="settings">
+                    @foreach (var falseComment in Model)
+                    {
+                        if (falseComment.IsActive == false)
+                        {
+                            <div class="post clearfix">
+                                <div class="user-block">
+                                    <img class="img-circle img-bordered-sm" src="~/Templates/AdminLTE-3.0.4/dist/img/avatar.png" alt="user image">
+                                    <span class="username">
+                                        <a href="/AdminComments/BlogComments/@falseComment.Blog.Id" class="badge-warning">@falseComment.Name ==> @falseComment.Blog.Title</a>
+                                        <span class="description float-right bg-body accent-gray-dark">Tarih: @falseComment.Date.ToString("MMMM dd yyyy hh:mm")</span>
+                                    </span>
+                                </div>
+                                <p>
+                                    @falseComment.Text
+                                </p>
+                                <p>
+                                    <span class="float-right">
+                                        <a href="#" class="link-black text-sm">
+                                            <i class="fas fa-edit"></i> Düzenle&nbsp;
+                                        </a>
+                                        <a href="/AdminComments/CommentStatusChangeTrue/@falseComment.Id" class="link-black text-sm">
+                                            <i class="fas fa-reply"></i> Tekrar Yayımla&nbsp;
+                                        </a>
+                                        <a href="#" class="link-black text-sm">
+                                            <i class="fas fa-trash"></i> Çöp Kutusu
+                                        </a>
+                                    </span>
+                                </p>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-
