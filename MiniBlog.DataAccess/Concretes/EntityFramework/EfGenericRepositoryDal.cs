@@ -2,12 +2,9 @@
 using MiniBlog.DataAccess.Concretes.EntityFramework.Contexts;
 using MiniBlog.Entities.Abstractions;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiniBlog.DataAccess.Concretes.EntityFramework
 {
@@ -42,10 +39,11 @@ namespace MiniBlog.DataAccess.Concretes.EntityFramework
             _context.Entry(entity).State = EntityState.Deleted;
         }
 
-        public void Update(T entity)
+        public int Update(T entity)
         {
             _dbSet.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
+            return _context.SaveChanges();
         }
 
         public IQueryable<T> Where(Expression<Func<T, bool>> expression)
