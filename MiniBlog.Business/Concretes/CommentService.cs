@@ -1,11 +1,8 @@
 ﻿using MiniBlog.Business.Abstractions;
 using MiniBlog.DataAccess.Abstractions;
 using MiniBlog.Entities.Concretes;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiniBlog.Business.Concretes
 {
@@ -27,5 +24,16 @@ namespace MiniBlog.Business.Concretes
         {
             return _commentDal.GetCommentByBlog(id).ToList();
         }
+
+        public int CommentStatusToChange(int id)
+        {
+            var comment = _commentDal.GetById(id);
+            if (comment.IsActive == true)
+                comment.IsActive = false;
+            else
+                comment.IsActive = true;
+            return _commentDal.Update(comment);
+        }
+
     }
 }
