@@ -103,6 +103,10 @@
     <Compile Include="Migrations\202301211619213_AddedTitleEmailPasswordColumnsForAuthor.designer.cs">
       <DependentUpon>202301211619213_AddedTitleEmailPasswordColumnsForAuthor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301221831240_AddedIsActiveColumnForComment.cs" />
+    <Compile Include="Migrations\202301221831240_AddedIsActiveColumnForComment.designer.cs">
+      <DependentUpon>202301221831240_AddedIsActiveColumnForComment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -131,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301211619213_AddedTitleEmailPasswordColumnsForAuthor.resx">
       <DependentUpon>202301211619213_AddedTitleEmailPasswordColumnsForAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301221831240_AddedIsActiveColumnForComment.resx">
+      <DependentUpon>202301221831240_AddedIsActiveColumnForComment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
