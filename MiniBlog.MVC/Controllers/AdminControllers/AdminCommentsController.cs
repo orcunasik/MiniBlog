@@ -29,5 +29,15 @@ namespace MiniBlog.MVC.Controllers.AdminControllers
             var comments = _commentService.GetAll();
             return PartialView(comments);
         }
+        public ActionResult CommentStatusChangeFalse(int id)
+        {
+            _commentService.CommentStatusToChange(id);
+            return RedirectToAction(nameof(Index));
+        }
+        public ActionResult CommentStatusChangeTrue(int id)
+        {
+            _commentService.CommentStatusToChange(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
