@@ -34,12 +34,12 @@ namespace MiniBlog.MVC.Controllers
             return PartialView();
         }
         [HttpPost]
-        public PartialViewResult LeaveComment(Comment comment)
+        public ActionResult LeaveComment(Comment comment)
         {
-
+            comment.IsActive = true;
             comment.Date = DateTime.Now;
             _commentService.Add(comment);
-            return PartialView();
+            return RedirectToAction("Index", "Blogs");
         }
     }
 }
