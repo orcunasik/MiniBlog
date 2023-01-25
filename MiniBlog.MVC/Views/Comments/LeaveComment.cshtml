@@ -2,6 +2,7 @@
 <div class="comment-form-wrap pt-5">
     <h3 class="mb-5">Yorum Bırakabilirsiniz</h3>
     <form action="/Comments/LeaveComment" method="post" class="p-5 bg-light">
+        <input type="hidden" id="IsActive" name="IsActive" value="@true" />
         <input type="hidden" id="Date" name="Date" value="@DateTime.Now" />
         <input type="hidden" id="BlogId" name="BlogId" value="@ViewBag.entityId" />
         <div class="form-group">
