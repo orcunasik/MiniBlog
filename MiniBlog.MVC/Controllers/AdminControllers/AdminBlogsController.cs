@@ -61,6 +61,7 @@ namespace MiniBlog.MVC.Controllers.AdminControllers
         [HttpPost]
         public ActionResult Save(Blog blog)
         {
+            blog.IsActive = true;
             blog.Date = DateTime.Now;
             _blogService.Add(blog);
             return RedirectToAction(nameof(Blogs));
