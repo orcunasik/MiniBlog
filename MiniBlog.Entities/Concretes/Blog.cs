@@ -1,9 +1,6 @@
 ﻿using MiniBlog.Entities.Abstractions;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiniBlog.Entities.Concretes
 {
@@ -14,6 +11,7 @@ namespace MiniBlog.Entities.Concretes
         public string Image { get; set; }
         public string Content { get; set; }
         public DateTime Date { get; set; }
+        public bool IsActive { get; set; }
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
         public int AuthorId { get; set; }
