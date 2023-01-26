@@ -1,11 +1,9 @@
 ﻿using MiniBlog.DataAccess.Abstractions;
 using MiniBlog.DataAccess.Concretes.EntityFramework.Contexts;
 using MiniBlog.Entities.Concretes;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Linq.Expressions;
 
 namespace MiniBlog.DataAccess.Concretes.EntityFramework
 {
