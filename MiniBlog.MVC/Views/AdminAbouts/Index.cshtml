@@ -1,0 +1,37 @@
+﻿@model IEnumerable<MiniBlog.Entities.Concretes.About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-md-12 mt-2">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Hakkımızda</h3>
+        </div>
+        @foreach (var about in Model)
+        {
+            <form action="/AdminAbouts/Update" method="post">
+                <input type="hidden" id="Id" name="Id" value="@about.Id" />
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="Content1">Misyonumuz</label>
+                        <textarea id="Content1" name="Content1" class="form-control" rows="4">@about.Content1</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="Image1">Görsel1</label>
+                        <input type="text" id="Image1" name="Image1" class="form-control" value="@about.Image1" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Content2">Vizyonumuz</label>
+                        <textarea id="Content2" name="Content2" class="form-control" rows="4">@about.Content2</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="Image2">Görsel2</label>
+                        <input type="text" id="Image2" name="Image2" class="form-control" value="@about.Image2" />
+                    </div>
+                    <input type="submit" class="btn btn-outline-success" value="Güncelle" />
+                </div>
+            </form>
+        }
+    </div>
+</div>
