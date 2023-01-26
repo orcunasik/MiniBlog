@@ -107,6 +107,14 @@
     <Compile Include="Migrations\202301221831240_AddedIsActiveColumnForComment.designer.cs">
       <DependentUpon>202301221831240_AddedIsActiveColumnForComment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301251449228_AddedCreatedDateColumnForCategory.cs" />
+    <Compile Include="Migrations\202301251449228_AddedCreatedDateColumnForCategory.designer.cs">
+      <DependentUpon>202301251449228_AddedCreatedDateColumnForCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301252108097_AddedIsActveColumnForBlogEntity.cs" />
+    <Compile Include="Migrations\202301252108097_AddedIsActveColumnForBlogEntity.designer.cs">
+      <DependentUpon>202301252108097_AddedIsActveColumnForBlogEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -138,6 +146,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301221831240_AddedIsActiveColumnForComment.resx">
       <DependentUpon>202301221831240_AddedIsActiveColumnForComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301251449228_AddedCreatedDateColumnForCategory.resx">
+      <DependentUpon>202301251449228_AddedCreatedDateColumnForCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301252108097_AddedIsActveColumnForBlogEntity.resx">
+      <DependentUpon>202301252108097_AddedIsActveColumnForBlogEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
