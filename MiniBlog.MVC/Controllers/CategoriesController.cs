@@ -1,10 +1,5 @@
 ﻿using MiniBlog.Business.Abstractions;
-using MiniBlog.Business.Concretes;
 using MiniBlog.Entities.Concretes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MiniBlog.MVC.Controllers
