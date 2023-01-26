@@ -19,6 +19,7 @@ namespace MiniBlog.DataAccess.Concretes.EntityFramework.Mappings
             Property(b => b.Content).IsRequired().HasColumnType("NVARCHAR(MAX)");
             Property(b => b.Date).IsRequired();
             Property(b => b.Image).IsRequired().HasMaxLength(300);
+            Property(b => b.IsActive).IsRequired();
 
             HasRequired<Category>(b => b.Category).WithMany(c => c.Blogs).HasForeignKey(b => b.CategoryId).WillCascadeOnDelete(false);
             HasRequired<Author>(b => b.Author).WithMany(a => a.Blogs).HasForeignKey(b => b.AuthorId).WillCascadeOnDelete(false);
