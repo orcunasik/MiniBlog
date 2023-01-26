@@ -1,0 +1,71 @@
+﻿@using MiniBlog.Business.Helpers
+@{
+    ViewBag.Title = "AuthorBlogs";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model IEnumerable<MiniBlog.Entities.Concretes.Blog>
+<div class="col-md-12 mt-3">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Yazara Ait Bloglar</h3>
+        </div>
+        <div class="card-body p-0">
+            <table class="table table-striped projects">
+                <thead>
+                    <tr>
+                        <th style="width: 1%">#</th>
+                        <th style="width: 20%">Blog</th>
+                        <th style="width: 35%">İçerik</th>
+                        <th style="width: 10%">Tarih</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int i = 1;
+                        foreach (var authorBlog in Model)
+                        {
+                            <tr>
+                                <td>@i</td>
+                                <td>
+                                    <span class="alert-heading">@authorBlog.Title</span>
+                                    <ul class="list-inline mt-2">
+                                        <li class="list-inline-item">
+                                            <img style="width:200px;height:200px;" src="@authorBlog.Image">
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>@authorBlog.Content.CharacterDelimiter(200) <a href="#" class="view" data-target="/AdminAuthors/AuthorBlogDetail/@authorBlog.Id">Devamı..</a></td>
+                                <td>@authorBlog.Date.ToString("MMM dd yyyy")</td>
+                            </tr>
+                            i++;
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modelView" tabindex="-1" role="dialog" aria-labelledby="">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Devamı..</h4>
+            </div>
+            <form method="post">
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/popupModal.js"></script>
+}
