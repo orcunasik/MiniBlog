@@ -157,7 +157,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutsController.cs" />
+    <Compile Include="Controllers\AdminControllers\AdminAboutsController.cs" />
     <Compile Include="Controllers\AdminControllers\AdminBlogsController.cs" />
+    <Compile Include="Controllers\AdminControllers\AdminCategoriesController.cs" />
     <Compile Include="Controllers\AdminControllers\AdminCommentsController.cs" />
     <Compile Include="Controllers\AdminControllers\AdminAuthorsController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
@@ -236,6 +238,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popupModal.js" />
     <Content Include="Templates\AdminLTE-3.0.4\.gitignore" />
     <Content Include="Templates\AdminLTE-3.0.4\build\config\postcss.config.js" />
     <Content Include="Templates\AdminLTE-3.0.4\build\config\rollup.config.js" />
@@ -2537,6 +2540,11 @@
     <Content Include="Views\AdminAuthors\Update.cshtml" />
     <Content Include="Views\AdminComments\Index.cshtml" />
     <Content Include="Views\AdminComments\Comments.cshtml" />
+    <Content Include="Views\AdminCategories\Index.cshtml" />
+    <Content Include="Views\AdminAuthors\AuthorBlogs.cshtml" />
+    <Content Include="Views\AdminAuthors\AuthorBlogDetail.cshtml" />
+    <Content Include="Views\AdminAbouts\Index.cshtml" />
+    <Content Include="Views\AdminAbouts\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
