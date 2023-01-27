@@ -162,6 +162,7 @@
     <Compile Include="Controllers\AdminControllers\AdminCategoriesController.cs" />
     <Compile Include="Controllers\AdminControllers\AdminCommentsController.cs" />
     <Compile Include="Controllers\AdminControllers\AdminAuthorsController.cs" />
+    <Compile Include="Controllers\AdminControllers\AdminMessagesController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
     <Compile Include="Controllers\BlogsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
@@ -2545,6 +2546,11 @@
     <Content Include="Views\AdminAuthors\AuthorBlogDetail.cshtml" />
     <Content Include="Views\AdminAbouts\Index.cshtml" />
     <Content Include="Views\AdminAbouts\Update.cshtml" />
+    <Content Include="Views\AdminMessages\SendBox.cshtml" />
+    <Content Include="Views\AdminMessages\InBox.cshtml" />
+    <Content Include="Views\AdminMessages\MessageSidebar.cshtml" />
+    <Content Include="Views\AdminMessages\MessageDetails.cshtml" />
+    <Content Include="Views\Shared\_AuthorLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
