@@ -1,0 +1,37 @@
+﻿@model MiniBlog.Entities.Concretes.Contact
+@{
+    ViewBag.Title = "MessageDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-md-12 mt-2">
+    <div class="col-sm-6">
+        <h4>Mesaj Detayları</h4>
+    </div>
+</div>
+@Html.Action("MessageSidebar", "AdminMessages")
+<div class="col-md-9">
+    <div class="card card-primary card-outline">
+        <div class="card-header">
+            <h3 class="card-title">@Model.Subject</h3>
+        </div>
+        <div class="card-body p-0">
+            <div class="mailbox-read-info">
+                <label>Gön:</label><span style="color:chocolate;font-family:'Comic Sans MS'"> @Model.FirstName @Model.LastName</span>
+                <br />
+                <label>Email:</label><span style="color:darkolivegreen;font-family:'Comic Sans MS'"> @Model.Mail</span>
+                <h6>
+                    <span class="mailbox-read-time float-right">@Model.Date.ToString("MMM dd yyyy hh:mm")</span>
+                </h6>
+            </div>
+            <div class="mailbox-read-message">
+                <p>@Model.Message</p>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="float-right">
+                <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Sil</button>
+                <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Yanıtla</button>
+            </div>
+        </div>
+    </div>
+</div>

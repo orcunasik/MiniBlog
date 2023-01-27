@@ -1,0 +1,73 @@
+﻿
+<div class="col-md-3">
+    <a href="compose.html" class="btn btn-primary btn-block mb-3">Yeni Mesaj</a>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Mesaj Kutusu</h3>
+        </div>
+        <div class="card-body p-0">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item active">
+                    <a href="/AdminMessages/InBox" class="nav-link">
+                        <i class="fas fa-inbox"></i> Gelen Kutusu
+                        <span class="badge bg-primary float-right">12</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/AdminMessages/SendBox" class="nav-link">
+                        <i class="far fa-envelope"></i> Gönderilenler
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/AdminMessages/Drafts" class="nav-link">
+                        <i class="far fa-file-alt"></i> Taslaklar
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/AdminMessages/TrashBox" class="nav-link">
+                        <i class="fas fa-filter"></i> Çöp Kutusu
+                        <span class="badge bg-warning float-right">65</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+@section scripts
+    {
+    <script src="/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+    <script>
+        $(function () {
+            $('.checkbox-toggle').click(function () {
+                var clicks = $(this).data('clicks')
+
+                if (clicks) {
+                    $('.mailbox-messages input[type=\'checkbox\']').prop('checked', false)
+                    $('.checkbox-toggle .far.fa-check-square').removeClass('fa-check-square').addClass('fa-square')
+                } else {
+                    $('.mailbox-messages input[type=\'checkbox\']').prop('checked', true)
+                    $('.checkbox-toggle .far.fa-square').removeClass('fa-square').addClass('fa-check-square')
+                }
+                $(this).data('clicks', !clicks)
+            })
+
+            $('.mailbox-star').click(function (e) {
+
+                e.preventDefault()
+
+                var $this = $(this).find('a > i')
+                var glyph = $this.hasClass('glyphicon')
+                var fa = $this.hasClass('fa')
+
+                if (glyph) {
+                    $this.toggleClass('glyphicon-star')
+                    $this.toggleClass('glyphicon-star-empty')
+                }
+                if (fa) {
+                    $this.toggleClass('fa-star')
+                    $this.toggleClass('fa-star-o')
+                }
+            })
+        })
+    </script>
+}
