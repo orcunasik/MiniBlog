@@ -1,0 +1,53 @@
+﻿@model MiniBlog.Entities.Concretes.Blog
+@{
+    ViewBag.Title = "Save";
+    Layout = "~/Views/Shared/_AuthorLayout.cshtml";
+}
+
+<form role="form" action="/AuthorBlogs/Save" method="post" class="col-md-8">
+    <input type="hidden" id="Date" name="Date" />
+    <input type="hidden" id="IsActive" name="IsActive" />
+    <input type="hidden" id="BlogRating" name="BlogRating" value="0" />
+    <div class="card-body">
+        <div class="form-group col-sm-8">
+            <label for="Title">Başlık</label>
+            <input type="text" id="Title" name="Title" class="form-control" placeholder="Başlık">
+        </div>
+        <div class="form-group col-sm-12">
+            <label for="Image">Görsel</label>
+            <input type="text" id="Image" name="Image" class="form-control" placeholder="Görsel URL">
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Content">Blog İçeriği</label>
+                <textarea id="Content" name="Content" class="form-control col" rows="5" placeholder="İçerik buraya..."></textarea>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="form-group">
+                <label>Kategori</label>
+                <select class="form-control" id="CategoryId" name="CategoryId">
+                    @foreach (var category in ViewBag.CategoryList)
+                    {
+                        <option value="@category.Value">@category.Text</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Yazar</label>
+                <select class="form-control" id="AuthorId" name="AuthorId">
+                    @foreach (var author in ViewBag.AuthorList)
+                    {
+                        <option value="@author.Value">@author.Text</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button type="submit" class="btn btn-outline-success mb-2">Kaydet</button>
+        <a href="/AuthorBlogs/Blogs" class="btn btn-outline-primary mb-2">Geri Dön</a>
+    </div>
+</form>
