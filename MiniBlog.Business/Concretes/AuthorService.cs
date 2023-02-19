@@ -1,18 +1,28 @@
 ﻿using MiniBlog.Business.Abstractions;
 using MiniBlog.DataAccess.Abstractions;
 using MiniBlog.Entities.Concretes;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiniBlog.Business.Concretes
 {
     public class AuthorService : Service<Author>, IAuthorService
     {
-        public AuthorService(IGenericRepositoryDal<Author> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
+        private readonly IAuthorDal _authorDal;
+        public AuthorService(IGenericRepositoryDal<Author> repository, IUnitOfWork unitOfWork, IAuthorDal authorDal) : base(repository, unitOfWork)
         {
+            _authorDal = authorDal;
+        }
+
+        public Author AuthorLogin(Author author)
+        {
+            var authorInfo = _authorDal.Where(a => a.Email == author.Email && a.Password == author.Password).FirstOrDefault();
+            return authorInfo;
+        }
+
+        public IEnumerable<Author> GetAuthorByEmail(string email)
+        {
+            return _authorDal.Where(a => a.Email == email).ToList();
         }
     }
 }

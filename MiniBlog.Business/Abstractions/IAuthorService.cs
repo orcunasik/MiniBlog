@@ -1,13 +1,13 @@
 ﻿using MiniBlog.Entities.Concretes;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiniBlog.Business.Abstractions
 {
     public interface IAuthorService : IService<Author>
     {
+        Author AuthorLogin(Author author);
+        //bool ValidateCredentials(string authorEmail, string password);
+        IEnumerable<Author> GetAuthorByEmail(string email);
+
     }
 }
