@@ -16,6 +16,7 @@ namespace MiniBlog.Entities.Concretes
         public virtual Category Category { get; set; }
         public int AuthorId { get; set; }
         public virtual Author Author { get; set; }
+        public Int16 BlogRating { get; set; }
         public ICollection<Comment> Comments { get; set; }
     }
 }
