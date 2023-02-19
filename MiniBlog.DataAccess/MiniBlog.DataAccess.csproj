@@ -115,6 +115,10 @@
     <Compile Include="Migrations\202301252108097_AddedIsActveColumnForBlogEntity.designer.cs">
       <DependentUpon>202301252108097_AddedIsActveColumnForBlogEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302191405245_AddedBlogRatingColumnForBlog.cs" />
+    <Compile Include="Migrations\202302191405245_AddedBlogRatingColumnForBlog.designer.cs">
+      <DependentUpon>202302191405245_AddedBlogRatingColumnForBlog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -152,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301252108097_AddedIsActveColumnForBlogEntity.resx">
       <DependentUpon>202301252108097_AddedIsActveColumnForBlogEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302191405245_AddedBlogRatingColumnForBlog.resx">
+      <DependentUpon>202302191405245_AddedBlogRatingColumnForBlog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
