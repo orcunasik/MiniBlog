@@ -163,6 +163,9 @@
     <Compile Include="Controllers\AdminControllers\AdminCommentsController.cs" />
     <Compile Include="Controllers\AdminControllers\AdminAuthorsController.cs" />
     <Compile Include="Controllers\AdminControllers\AdminMessagesController.cs" />
+    <Compile Include="Controllers\AuthorControllers\AuthorBlogsController.cs" />
+    <Compile Include="Controllers\AuthorControllers\AuthorLoginController.cs" />
+    <Compile Include="Controllers\AuthorControllers\AuthorProfileController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
     <Compile Include="Controllers\BlogsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
@@ -2130,6 +2133,13 @@
     <Content Include="Templates\miniblog\js\popper.min.js" />
     <Content Include="Templates\miniblog\js\slick.min.js" />
     <Content Include="Templates\miniblog\single.html" />
+    <Content Include="Templates\Report-Login-Free\css\font-awesome.min.css" />
+    <Content Include="Templates\Report-Login-Free\css\style.css" />
+    <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\Report-Login-Free\images\1.png" />
+    <Content Include="Templates\Report-Login-Free\images\undraw_Work_time_re_hdyv.svg" />
+    <Content Include="Templates\Report-Login-Free\index.html" />
+    <Content Include="Templates\Report-Login-Free\starter-license-W3Layouts.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2551,6 +2561,18 @@
     <Content Include="Views\AdminMessages\MessageSidebar.cshtml" />
     <Content Include="Views\AdminMessages\MessageDetails.cshtml" />
     <Content Include="Views\Shared\_AuthorLayout.cshtml" />
+    <Content Include="Views\AuthorLogin\AuthorLogin.cshtml" />
+    <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\Report-Login-Free\fonts\FontAwesome.otf" />
+    <Content Include="Views\AuthorBlogs\Blogs.cshtml" />
+    <Content Include="Views\AuthorProfile\Index.cshtml" />
+    <Content Include="Views\AuthorProfile\AuthorProfilePartialView.cshtml" />
+    <Content Include="Views\AuthorBlogs\Update.cshtml" />
+    <Content Include="Views\AuthorBlogs\BlogDetail.cshtml" />
+    <Content Include="Views\AuthorBlogs\Save.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
